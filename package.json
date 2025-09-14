@@ -1,0 +1,71 @@
+{
+  "name": "chat-participant-progress-demo",
+  "displayName": "Chat Participant Progress Demo",
+  "description": "VS Code extension demonstrating chat participants with progress indicators",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onChatParticipant:chat-progress-demo.participant"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "chatParticipants": [
+      {
+        "id": "chat-progress-demo.participant",
+        "fullName": "Progress Demo",
+        "name": "progress",
+        "description": "Demonstrates various progress indicators in chat",
+        "isSticky": true
+      }
+    ],
+    "languageModelTools": [
+      {
+        "name": "progress-demo-simple",
+        "displayName": "Simple Progress Demo",
+        "modelDescription": "Demonstrates simple progress indicators with configurable duration and steps"
+      },
+      {
+        "name": "progress-demo-file-processor",
+        "displayName": "File Processor",
+        "modelDescription": "Simulates file processing operations with progress tracking"
+      },
+      {
+        "name": "progress-demo-workspace-analyzer",
+        "displayName": "Workspace Analyzer",
+        "modelDescription": "Analyzes workspace structure and files with step-by-step progress reporting"
+      },
+      {
+        "name": "progress-demo-task-runner",
+        "displayName": "Task Runner",
+        "modelDescription": "Executes multi-phase tasks with detailed progress and cancellation support"
+      },
+      {
+        "name": "progress-demo-interactive-wizard",
+        "displayName": "Interactive Wizard",
+        "modelDescription": "Runs interactive setup wizards with progress tracking and user choices"
+      }
+    ],
+    "commands": [
+      {
+        "command": "chat-progress-demo.helloWorld",
+        "title": "Hello World"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "16.x",
+    "@types/vscode": "^1.103.0",
+    "typescript": "^4.9.4",
+    "vscode": "^1.1.37"
+  }
+}
